@@ -1,4 +1,5 @@
 {
-    "mongoDBConnection" : "mongodb+srv://cars:kanishka@cluster0.zk5dd.mongodb.net/carsapp?retryWrites=true&w=majority",
-    "jwtsecret":"secret"
+	"mongoDBConnection": "mongodb+srv://cars:kanishka@cluster0.zk5dd.mongodb.net/carsapp?retryWrites=true&w=majority",
+	"jwtsecret": "secret",
+	"taskMongoDBConnection": "mongodb+srv://sara:12345@cluster0.vxpet.mongodb.net/mernProject?retryWrites=true&w=majority"
 }
