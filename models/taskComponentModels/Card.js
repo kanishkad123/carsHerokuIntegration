@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 //schema
 const CardSchema = new mongoose.Schema({
+	group: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "group",
+	},
 	value: {
 		type: String,
 		//required: true,
