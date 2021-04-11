@@ -3,6 +3,7 @@ const noteRoutes = require("./routes/api/noteRouter-DB");
 const carsRoutes = require("./routes/api/carsRoutes");
 const usersRoutes = require("./routes/api/usersRoutes");
 const authRoutes = require("./routes/api/authRoutes");
+const resumeRoutes = require('./routes/api/resumeComponentRoutes/resumeRoutes');
 const connectDB = require("./config/connectDB");
 const cors = require("cors");
 
@@ -26,6 +27,7 @@ app.use('/api/note', noteRoutes);
 app.use("/api/cars", carsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
+app.use('/api/resume',resumeRoutes);
 
 //routes for task component
 app.use("/api/task/group", groupRoute);
