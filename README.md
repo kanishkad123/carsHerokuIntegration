@@ -16,3 +16,9 @@
 - Note components api
   - CRUD operations for note
   - add/delete/update and get for notes.
+
+## Tejal Gajjar
+
+- N01323994
+- Resume components api
+  - CRUD operations for Resume
