@@ -1,4 +1,5 @@
 const express = require("express");
+const noteRoutes = require("./routes/api/noteRouter-DB");
 const carsRoutes = require("./routes/api/carsRoutes");
 const usersRoutes = require("./routes/api/usersRoutes");
 const authRoutes = require("./routes/api/authRoutes");
@@ -15,12 +16,13 @@ const checklistRoute = require("./routes/api/taskComponentRoutes/checklistRoute"
 const todoRoute = require("./routes/api/taskComponentRoutes/todoRoute");
 
 //connect to db
-//connectDB();
-taskConnectDB();
+connectDB();
+//taskConnectDB();
 
 //set a middleware to parse dat
 app.use(express.json());
 app.use(cors());
+app.use('/api/note', noteRoutes);
 app.use("/api/cars", carsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
