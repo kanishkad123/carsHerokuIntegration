@@ -3,6 +3,7 @@ const noteRoutes = require("./routes/api/noteRouter-DB");
 const jobApplicationsRoutes = require("./routes/api/jobApplicationsRoutes");
 const usersRoutes = require("./routes/api/usersRoutes");
 const authRoutes = require("./routes/api/authRoutes");
+const journalRoutes = require('./routes/api/journalComponentRoutes/journalRoutes');
 const resumeRoutes = require('./routes/api/resumeComponentRoutes/resumeRoutes');
 const connectDB = require("./config/connectDB");
 const cors = require("cors");
@@ -28,6 +29,7 @@ app.use("/api/jobApplications", jobApplicationsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/resume',resumeRoutes);
+app.use('/api/journal',journalRoutes);
 
 //routes for task component
 app.use("/api/task/group", groupRoute);
