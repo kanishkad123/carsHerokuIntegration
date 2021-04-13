@@ -19,7 +19,6 @@
 - N01350427
 - Note components api
   - CRUD operations for Notes
-  - CRUD operations for Users.
   - Authentication of users using token
 
 ## Tejal Gajjar
