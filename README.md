@@ -1,7 +1,11 @@
 ## Kanishka Deshpande
 
 - N01352440
-- Backend - NodeJS, ExpressJs, MongoDB
+- Job applications api
+    - CRUD for job applications
+- User Creation & Authentication
+    - CRUD for users
+    - Authentication of users
 
 ## Xirui Chen
 
