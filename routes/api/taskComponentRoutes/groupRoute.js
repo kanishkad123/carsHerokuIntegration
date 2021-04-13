@@ -4,10 +4,18 @@ let Group = require("../../../models/taskComponentModels/Group");
 const auth = require("../../../middleware/auth");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+//get all groups from one user
+router.get("/", auth, async (req, res) => {
 	try {
-		const GroupDb = await Group.find();
-		res.send(GroupDb);
+		//const GroupDb = await Group.find();
+		const ids = [req.user.id];
+		console.log(ids);
+		const GroupDb = Group.find()
+			.where("user")
+			.in(ids)
+			.exec((err, records) => {
+				res.send(records);
+			});
 	} catch (err) {
 		res.status(500).send("Server error");
 		console.log(err);
