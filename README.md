@@ -32,3 +32,4 @@
 - N01350455
 - Journal components api
     - CRUD operations for Journal
+    - Authentication of users using token
