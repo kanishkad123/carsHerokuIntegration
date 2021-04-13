@@ -26,6 +26,7 @@
 - N01323994
 - Resume components api
   - CRUD operations for Resume
+  - Authentication of users using token
 
 ## Sayali Mali
 
