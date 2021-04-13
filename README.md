@@ -26,3 +26,9 @@
 - N01323994
 - Resume components api
   - CRUD operations for Resume
+
+## Sayali Mali
+
+- N01350455
+- Journal components api
+    - CRUD operations for Journal
