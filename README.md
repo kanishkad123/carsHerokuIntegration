@@ -1,3 +1,8 @@
+#Noteworks:
+
+A self-assessment website that allows users to organize work-life while exploring various features such as creating notes, tasks, writing journals, making job applications, designing resumes/portfolios.
+
+
 ## Kanishka Deshpande
 
 - N01352440
@@ -24,9 +29,12 @@
 ## Tejal Gajjar
 
 - N01323994
-- Resume components api
+- Resume components API
   - CRUD operations for Resume
   - Authentication of users using token
+- Resume Download PDF API
+  - create-pdf API : convert HTML to PDF
+  - fetch-pdf API : send generated PDF file to the client
 
 ## Sayali Mali
 
