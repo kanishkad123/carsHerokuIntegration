@@ -46,7 +46,7 @@ A self-assessment website that allows users to organize work-life while explorin
 - Journal components api
     - CRUD operations for Journal
     - Authentication of users using token
-    - Add image option 
+    - Add image  
  - Reminder components api
     - CRUD operations for reminder
     - Authentication of users using token
