@@ -1,6 +1,10 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
+<<<<<<< Updated upstream
 let Reminder = require('../../../models/Reminder');
+=======
+let Reminder = require('../../../models/journalComponentModels/Reminder');
+>>>>>>> Stashed changes
 
 const authToken = require('../../../middleware/auth');
 

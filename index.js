@@ -9,6 +9,7 @@ const jobApplicationsRoutes = require("./routes/api/jobApplicationsRoutes");
 const reminderRoutes = require('./routes/api/journalComponentRoutes/reminderRoutes');
 const usersRoutes = require("./routes/api/usersRoutes");
 const authRoutes = require("./routes/api/authRoutes");
+const reminderRoutes = require('./routes/api/journalComponentRoutes/reminderRoutes');
 const journalRoutes = require('./routes/api/journalComponentRoutes/journalRoutes');
 const resumeRoutes = require('./routes/api/resumeComponentRoutes/resumeRoutes');
 const resuemDownloadRoute = require('./routes/api/resumeComponentRoutes/resumeDownload');
@@ -47,8 +48,14 @@ app.use("/api/jobApplications", jobApplicationsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/resume',resumeRoutes);
+<<<<<<< Updated upstream
 app.use('/api/resumeDownload', resuemDownloadRoute);
+=======
+
+//routes for journal component
+>>>>>>> Stashed changes
 app.use('/api/journal',journalRoutes);
+app.use('/api/reminder',reminderRoutes);
 
 //routes for task component
 app.use("/api/task/group", groupRoute);

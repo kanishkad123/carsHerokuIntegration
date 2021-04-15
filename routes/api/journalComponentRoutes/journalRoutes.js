@@ -1,6 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-let Journal = require('../../../models/Journal');
+let Journal = require('../../../models/journalComponentModels/Journal');
 
 const authToken = require('../../../middleware/auth');
 
