@@ -4,10 +4,16 @@ let Checklist = require("../../../models/taskComponentModels/Checklist");
 let Card = require("../../../models/taskComponentModels/Card");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+//get all checklists of one card
+router.post("/", async (req, res) => {
 	try {
-		const ChecklistDb = await Checklist.find();
-		res.send(ChecklistDb);
+		const ids = [req.body.cardId];
+		const ChecklistDb = Checklist.find()
+			.where("card")
+			.in(ids)
+			.exec((err, records) => {
+				res.send(records);
+			});
 	} catch (err) {
 		res.status(500).send("Server error");
 		console.log(err);
@@ -27,7 +33,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post(
-	"/",
+	"/add",
 	// [
 	// 	check("make", "make is required").not().isEmpty(),
 	// 	check("model", "model longer than 1 char").isLength({
@@ -46,6 +52,7 @@ router.post(
 			const checklist = new Checklist({
 				todos: [],
 				checklistName: req.body.checklistName,
+				card: req.body.cardId,
 			});
 			card.checklists = [...card.checklists, checklist];
 			await checklist.save();
