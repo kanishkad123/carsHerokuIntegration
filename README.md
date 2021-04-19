@@ -2,6 +2,8 @@
 
 A self-assessment website that allows users to organize work-life while exploring various features such as creating notes, tasks, writing journals, making job applications, designing resumes/portfolios.
 
+## Hosted at - https://mern-clan.herokuapp.com
+
 ## Kanishka Deshpande
 
 - N01352440
