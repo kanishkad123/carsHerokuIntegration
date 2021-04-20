@@ -11,10 +11,14 @@ const NoteSchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    tagData:{
+        type: Object,
+    },
     date: {
         type: Date,
         default :Date.now(),
       },
+  
 });
 
 module.exports = mongoose.model('Note', NoteSchema);
