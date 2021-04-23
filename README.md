@@ -30,7 +30,7 @@ A self-assessment website that allows users to organize work-life while explorin
   - Authentication of users using token
 - Sorting Notes to display the latest created note on top.
 - Search bar to filter the Note of user's choice.
-- Set as favourite option to set a particular note as priority.
+- Set as favourite option using tags to set a particular note as priority.
 
 ## Tejal Gajjar
 
