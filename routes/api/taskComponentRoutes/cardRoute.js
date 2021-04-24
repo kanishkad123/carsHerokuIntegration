@@ -4,10 +4,16 @@ let Card = require("../../../models/taskComponentModels/Card");
 let Group = require("../../../models/taskComponentModels/Group");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+//pass group id and get all cards in this group
+router.post("/", async (req, res) => {
 	try {
-		const CardDb = await Card.find();
-		res.send(CardDb);
+		const ids = [req.body.groupId];
+		const CardDb = Card.find()
+			.where("group")
+			.in(ids)
+			.exec((err, records) => {
+				res.send(records);
+			});
 	} catch (err) {
 		res.status(500).send("Server error");
 		console.log(err);
@@ -27,7 +33,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post(
-	"/",
+	"/add",
 	[check("value", "value is required").not().isEmpty()],
 
 	async (req, res) => {

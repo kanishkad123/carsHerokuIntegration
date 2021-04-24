@@ -52,13 +52,15 @@ async(req, res) => {
             title: req.body.title,
             description: req.body.description,
             date:req.body.date,
+            tagData:req.body.tags,
         });
-
+        console.log("tagcontent"+req.body.tags);
         const result = await newNote.save();
-        console.log(result);
+        console.log("Mandy"+result);
         res.send(result);
 
     } catch (err) {
+        console.log(err);
         res.status(500).send('Server error');
     }
 }
