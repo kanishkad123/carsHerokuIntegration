@@ -32,16 +32,13 @@ connectDB();
 //set a middleware to parse dat
 
 //routes for journal component
-app.use("/api/journal", journalRoutes);
-app.use("/api/reminder", reminderRoutes);
+app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
-app.use(morgan("dev"));
-app.use(express.json());
-app.use(cors());
+app.use("/api/journal", journalRoutes);
+app.use("/api/reminder", reminderRoutes);
 app.use("/api/note", noteRoutes);
 app.use("/api/jobApplications", jobApplicationsRoutes);
 app.use("/api/users", usersRoutes);
@@ -58,7 +55,8 @@ app.use("/api/task/todo", todoRoute);
 app.use("/api/task/label", labelRoute);
 app.use("/api/task/cover", coverRoute);
 
-app.listen(5000, () => {
+var port = process.env.PORT || 5000;
+app.listen(port, () => {
 	console.log("Server started");
 });
 

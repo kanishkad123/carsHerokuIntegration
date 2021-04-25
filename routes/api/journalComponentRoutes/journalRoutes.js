@@ -8,13 +8,15 @@ const router = express.Router();
 
 //print list of Journal using get method
 router.get('/',authToken,async (req, res) =>
-{try{
+{
+    try{
     //const journalList = await Journal.find({ user:req.user.id });
     const journalList = await Journal.find();
      
     res.send(journalList);
 } catch(err)
 {
+    console.log('get    called')
     res.status(500).send('server error in get');
 }
 }
