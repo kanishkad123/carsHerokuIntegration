@@ -11,8 +11,8 @@ const router = express.Router();
 //print list of resumes using get method
 router.get('/',authToken,async (req, res) =>
 {try{
-    //const resumeList = await Resume.find({ user:req.user.id });
-    const resumeList = await Resume.find();
+    const resumeList = await Resume.find({ user:req.user.id });
+    //const resumeList = await Resume.find();
      
     res.send(resumeList);
 } catch(err)
