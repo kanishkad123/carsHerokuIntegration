@@ -70,13 +70,17 @@ async(req, res) => {
 router.delete('/', 
 auth,
 async(req, res) => {
-    console.log("Sandeep3 printing inside delete block");
     try {
       
         const note = await Note.findById(req.body.id);
         
         if (!note) {
             return res.status(404).json({ msg: 'Task not found' });
+        }
+        if (req.user.id != note.user) {
+            return res
+                .status(404)
+                .send("User can not delete other user's note");
         }
         const result = await Note.findByIdAndDelete(req.body.id)
         res.send(result);
