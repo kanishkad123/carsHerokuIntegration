@@ -104,16 +104,17 @@ async(req, res) => {
     if (!errors.isEmpty()) {
         return res.status(422).json(errors.array());
     }
-    if (req.user.id != note.user) {
-        return res
-            .status(404)
-            .send("User can not update other user's note");
-    }
+    
     else{
     try {
         const note = await Note.findById(req.body.id);
         if (!note) {
             return res.status(404).json({ msg: 'Task not found' });
+        }
+        if (req.user.id != note.user) {
+            return res
+                .status(404)
+                .send("User can not update other user's note");
         }
         note.title = req.body.title;
         note.description = req.body.description; 
