@@ -54,6 +54,7 @@ async(req, res) => {
             date:req.body.date,
             tagData:req.body.tags,
         });
+       
         console.log("tagcontent"+req.body.tags);
         const result = await newNote.save();
         console.log("Mandy"+result);
@@ -102,6 +103,11 @@ async(req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json(errors.array());
+    }
+    if (req.user.id != note.user) {
+        return res
+            .status(404)
+            .send("User can not update other user's note");
     }
     else{
     try {
