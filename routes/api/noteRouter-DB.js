@@ -106,7 +106,8 @@ async(req, res) => {
             return res.status(404).json({ msg: 'Task not found' });
         }
         note.title = req.body.title;
-        note.description = req.body.description;      
+        note.description = req.body.description; 
+        note.tagData = req.body.tags;
         await note.save();
         res.send(note);
     } catch (err) {
